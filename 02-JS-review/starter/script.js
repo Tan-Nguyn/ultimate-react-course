@@ -142,3 +142,33 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+const book = getBook(2);
+
+book;
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
+
+book;
+
+const [primaryGenre, secondaryGenre] = genres;
+
+console.log(primaryGenre, secondaryGenre);
+const newGenre = ["epic fantasy", ...genres];
+
+newGenre;
+
+const updateBook = {
+  ...book,
+  // alway new info
+  moviePublicationDate: "04/06/2025",
+
+  //Manipulate existing info
+  pages: 1606,
+};
+0;
+
+updateBook;
+
+const pageRange = pages > 1000 ? "over a thousand" : "less than 1000";
+pageRange;
