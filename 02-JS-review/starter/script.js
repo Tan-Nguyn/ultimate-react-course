@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(1);
 
 book;
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
@@ -158,7 +158,7 @@ const newGenre = ["epic fantasy", ...genres];
 
 newGenre;
 
-const updateBook = {
+updateBook = {
   ...book,
   // alway new info
   moviePublicationDate: "04/06/2025",
@@ -166,9 +166,33 @@ const updateBook = {
   //Manipulate existing info
   pages: 1606,
 };
-0;
 
 updateBook;
 
-const pageRange = pages > 1000 ? "over a thousand" : "less than 1000";
+const pageRange =
+  updateBook.pages > 1000 ? "over a thousand" : "less than 1000";
+
 pageRange;
+
+function getYear(str) {
+  return str.split("-")[0];
+}
+
+console.log(getYear(publicationDate));
+
+console.log(book.translations.spanish);
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+const books = getBooks();
+
+const titles = books.map((book) => book.title);
+
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+
+essentialData;
